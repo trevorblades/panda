@@ -1,0 +1,24 @@
+{
+  "name": "@pandacss/eslint-plugin-pandacss",
+  "version": "0.0.0",
+  "description": "Eslint plugin for panda css",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "author": "Abraham Aremu <anubra266@gmail.com>",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format=esm,cjs --dts",
+    "build-fast": "tsup src/index.ts --format=esm,cjs --no-dts",
+    "dev": "pnpm build-fast --watch"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@typescript-eslint/utils": "^6.8.0"
+  }
+}

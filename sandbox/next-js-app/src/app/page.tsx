@@ -1,5 +1,9 @@
 import { styled } from '../../styled-system/jsx'
 
+const foo = 'baz'
+
+console.log('foo', foo)
+
 const One = styled.div`
   display: flex;
   width: 300px;
