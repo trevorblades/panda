@@ -1,8 +1,12 @@
-import { createEslintRule } from '../utils'
+import { createRule } from '../utils'
 
 export const RULE_NAME = 'enforce-foo-bar'
 
-export default createEslintRule({
+type MessageIds = 'fooBar'
+
+type Options = []
+
+export default createRule<Options, MessageIds>({
   name: RULE_NAME,
   meta: {
     type: 'problem',
@@ -11,6 +15,9 @@ export default createEslintRule({
     },
     fixable: 'code',
     schema: [],
+    messages: {
+      fooBar: 'Value other than "bar" assigned to `const foo`. Unexpected value: {{ notBar }}.',
+    },
   },
   defaultOptions: [],
   create(context: any) {
@@ -32,7 +39,7 @@ export default createEslintRule({
                */
               context.report({
                 node,
-                message: 'Value other than "bar" assigned to `const foo`. Unexpected value: {{ notBar }}.',
+                messageId: 'fooBar',
                 data: {
                   notBar: node.init.value,
                 },
