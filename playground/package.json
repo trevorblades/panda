@@ -20,7 +20,7 @@
     "@ark-ui/react": "0.15.0",
     "@babel/parser": "^7.22.7",
     "@babel/traverse": "^7.23.2",
-    "@monaco-editor/react": "4.5.2",
+    "@monaco-editor/react": "4.6.0",
     "@pandacss/config": "workspace:*",
     "@pandacss/generator": "workspace:*",
     "@pandacss/parser": "workspace:*",
